@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAquatico.cs" />
     <Compile Include="Model\Carro.cs" />
     <Compile Include="Model\Lancha.cs" />
+    <Compile Include="Model\TipoCarro.cs" />
     <Compile Include="Model\Veiculo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
