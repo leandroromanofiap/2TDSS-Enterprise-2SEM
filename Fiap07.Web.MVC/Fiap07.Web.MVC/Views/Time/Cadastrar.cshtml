@@ -1,0 +1,40 @@
+﻿@model Fiap07.Web.MVC.Models.Time
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cadastrar Times</h2>
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.Nome)
+        @Html.TextBoxFor(x => x.Nome, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.CheckBoxFor(x => x.Mundial)
+        @Html.LabelFor(x => x.Mundial)
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Tecnico.Nome)
+        @Html.TextBoxFor(x => x.Tecnico.Nome, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Tecnico.Salario)
+        @Html.TextBoxFor(x => x.Tecnico.Salario, new { @class = "form-control" })
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Cadastrar Time" />
+}
