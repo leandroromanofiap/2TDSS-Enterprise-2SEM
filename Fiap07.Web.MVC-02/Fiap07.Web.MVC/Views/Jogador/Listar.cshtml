@@ -1,0 +1,35 @@
+﻿@model List<Fiap07.Web.MVC.Models.Jogador>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Jogadores</h2>
+
+@using (Html.BeginForm("Buscar", "Jogador", FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.DropDownList("codigo",
+    ViewBag.times as SelectList,
+    "Selecione",
+    new { @class = "form-control" })
+
+    <input type="submit" value="Buscar" class="btn btn-primary" />
+}
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Data Nascimento</th>
+        <th>Time</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.DataNascimento.ToShortDateString()</td>
+            <td>@item.Time.Nome</td>
+        </tr>
+    }
+</table>
